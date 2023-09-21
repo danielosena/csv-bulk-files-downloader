@@ -4,7 +4,7 @@ import os
 import time
 
 # Ler o arquivo CSV com os links das imagens
-df = pd.read_csv('imagens08jan.csv')
+df = pd.read_csv('imagens.csv')
 
 # Pasta de destino para as imagens
 pasta_destino = 'imagens'
@@ -25,7 +25,7 @@ registro_df = pd.read_csv(registro_arquivo)
 # Loop através das linhas do DataFrame
 for index, row in df.iterrows():
     if not registro_df.at[index, 'baixado']:
-        link_imagem = row['imagens']
+        link_imagem = row['image']
         nome_arquivo = os.path.basename(link_imagem)
         success = False
         max_attempts = 5  # Número máximo de tentativas
